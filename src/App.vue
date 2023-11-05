@@ -1,18 +1,12 @@
-<template>
-  <div>{{ message }}</div>
-</template>
+<script setup>
+import { ref } from 'vue';
 
-<script>
-export default {
-  name: "App",
-  data() {
-    return {
-      message: ""
-    };
-  },
-  async mounted() {
-    const { text } = await (await fetch("/api/message")).json();
-    this.message = text;
-  }
-};
+const message = ref(null); // リアクティブな値を定義
+fetch('api/message')
+  .then(response => response.json()) // レスポンスをJSONとして解析
+  .then(data => message.value = data.text); // データのtextプロパティをmessageに設定
 </script>
+
+<template>
+  <div>{{ message }}</div> <!-- messageを表示 -->
+</template>

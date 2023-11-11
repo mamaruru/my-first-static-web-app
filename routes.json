@@ -1,0 +1,15 @@
+{
+    "routes": [
+      {
+        "route": "/*",
+        "serve": "/index.html",
+        "headers": {
+          "content-Security-Policy": {
+            "directive": "referrer",
+            "policy": "strict-origin-when-cross-origin"
+          }
+        }
+      }
+    ]
+  }
+  

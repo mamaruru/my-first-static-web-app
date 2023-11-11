@@ -57,6 +57,7 @@ fetch('api/message')
 
 </script>
 
+
 <template>
   <h1>This is a <b>Tabs</b> example project with Vue 3 and Typescript</h1>
   <div>sbcd</div> <!-- messageを表示 -->

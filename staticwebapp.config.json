@@ -2,7 +2,12 @@
     "navigationFallback": {
         "rewrite": "/index.html"
     },
-    "headers": {
-        "Referrer-Policy": "origin"
-    }
+    "routes": [
+        {
+          "route": "/*",
+          "headers": {
+            "Referrer-Policy": "origin"
+          }
+        }
+      ]
 }

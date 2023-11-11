@@ -1,6 +1,6 @@
 module.exports = async function (context, req) {
     context.res.body = JSON.stringify({
-        text: "Hello from the API"
+        text: "Hello"
     });
     context.res.headers = {
         "Content-Type": "application/json"

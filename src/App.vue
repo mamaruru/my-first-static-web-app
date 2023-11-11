@@ -27,7 +27,7 @@ fetch('api/message')
     // AshinaPoc APIに渡すJSONデータ
     const jsonData = {
       videoAnalytics: {
-        userId: "testUserId"
+        userId: message.value
       }
     };
     
@@ -45,7 +45,7 @@ fetch('api/message')
   script.type = 'text/javascript';
   script.charset = 'utf-8';
   script.defer = true;
-  script.src = 'https://player-api.p.uliza.jp/v1/players/default-player/nssys/AshinaPoc?type=normal&name=BBB';
+  script.src = 'https://player-api.p.uliza.jp/v1/players/player_02/nssys/AshinaPoc?type=normal&name=BBB';
   script.async = true;
   script.textContent = `${scriptContent}`; // デバッグ用にログ出力
 

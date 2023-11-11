@@ -5,6 +5,6 @@
     "globalHeaders": {
         "Access-Control-Allow-Origin": "https://player-api.p.uliza.jp",
         "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
-        "Referrer-Policy": "origin"
+        "Referrer-Policy": "no-referrer-when-downgrade"
     }
 }

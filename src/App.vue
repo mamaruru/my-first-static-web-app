@@ -16,14 +16,51 @@ export default defineComponent({
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { onMounted } from 'vue';
+
 const message = ref(null); // リアクティブな値を定義
 fetch('api/message')
   .then(response => response.json()) // レスポンスをJSONとして解析
-  .then(data => message.value = data.text); // データのtextプロパティをmessageに設定
+  .then(data => {
+    message.value = data.text;
+
+    // AshinaPoc APIに渡すJSONデータ
+    const jsonData = {
+      videoAnalytics: {
+        userId: "testUserId"
+      }
+    };
+    
+  // スクリプトの内容を動的に生成
+  const scriptContent = `
+    {
+      "videoAnalytics": {
+        "userId": "${jsonData.videoAnalytics.userId}"
+      }
+    }
+  `;
+
+  // 新しいスクリプト要素を作成し、中にJSONデータを埋め込んで追加
+  const script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.charset = 'utf-8';
+  script.defer = true;
+  script.src = 'https://player-api.p.uliza.jp/v1/players/default-player/nssys/AshinaPoc?type=normal&name=BBB';
+  script.async = true;
+  script.textContent = `${scriptContent}`; // デバッグ用にログ出力
+
+  // スクリプトをHTMLに追加
+  document.getElementById('abcde').appendChild(script);
+
+  // APIへのリクエストはここで行うか、もしくはスクリプト内で行う
+});
+
 </script>
 
 <template>
   <h1>This is a <b>Tabs</b> example project with Vue 3 and Typescript</h1>
+  <div>sbcd</div> <!-- messageを表示 -->
+  <div id="abcde"></div>
   <div>{{ message }}</div> <!-- messageを表示 -->
   <div class="tabs-example">
     <div class="example example-1">

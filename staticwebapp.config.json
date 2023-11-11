@@ -3,6 +3,6 @@
         "rewrite": "/index.html"
     },
     "headers": {
-        "Referrer-Policy": "no-referrer-when-downgrade"
+        "Referrer-Policy": "origin"
     }
 }

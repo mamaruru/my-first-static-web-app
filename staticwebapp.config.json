@@ -2,12 +2,9 @@
     "navigationFallback": {
         "rewrite": "/index.html"
     },
-    "routes": [
-        {
-          "route": "/*",
-          "headers": {
-            "Referrer-Policy": "origin"
-          }
-        }
-      ]
+    "globalHeaders": {
+        "Access-Control-Allow-Origin": "https://player-api.p.uliza.jp",
+        "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+        "Referrer-Policy": "origin"
+    }
 }

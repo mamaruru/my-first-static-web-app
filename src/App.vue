@@ -50,7 +50,10 @@ fetch('api/message')
   script.textContent = `${scriptContent}`; // デバッグ用にログ出力
 
   // スクリプトをHTMLに追加
-  document.getElementById('abcde').appendChild(script);
+  const targetElement = document.getElementById('abcde');
+  if (targetElement) {
+    targetElement.appendChild(script);
+  }
 
   // APIへのリクエストはここで行うか、もしくはスクリプト内で行う
 });

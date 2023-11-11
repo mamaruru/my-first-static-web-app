@@ -1,4 +1,8 @@
 {
+  "compilerOptions": {
+    "types": ["vite", "@vitejs/plugin-vue"],
+    // 他の設定...
+  },
   "files": [],
   "references": [
     {
